@@ -1,0 +1,810 @@
+@charset "utf-8";
+
+body{
+    /* display: none */
+}
+
+.wrap{
+    overflow: hidden;
+}
+
+.logo{
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.logo h1{
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    letter-spacing: 5px;
+    padding: 30px 0;
+    text-shadow: 3px 3px 5px gray;
+}
+
+.logo a{
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo a img{
+    width: 30px;
+    vertical-align: bottom !important;
+}
+
+hr{
+    width: 300px;
+    margin: 30px auto;
+}
+
+/* 메인영역 */
+.main{}
+
+/* 포토&일러 영역 */
+.photo_zone{
+    background: linear-gradient(rgb(255, 166, 0), rgb(231, 218, 194));
+    padding: 50px 0;
+}
+
+.photo_zone_more{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.photo_zone_more a{
+    font-weight: bold;
+    color: rgb(143, 93, 0);
+}
+
+.photo_zone h2{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 3px black;
+}
+.photo_zone_icon{
+    text-align: center;
+}
+
+.photo_zone_icon img{
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.photo_zone p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin-bottom: 50px;
+}
+
+.photo_zone_slide{}
+.photo_illust{}
+.photo_illust li{
+    position: relative;
+    border-radius: 20px;
+    /* box-shadow: 0 0 20px rgb(153, 86, 207); */
+    /* border: 1px solid red; */
+    width: 380px;
+    height: 280px;
+}
+.photo_illust li img{
+    height: 280px;
+    border-radius: 20px;
+}
+
+.slide_title{
+    width: 380px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 150px;
+    z-index: 6;
+    opacity: 0;
+    transition: all 0.3s 0.3s;
+}
+
+.slide_title h3{
+    color: white;
+    
+}
+
+.slide_title p{
+    font-size: 14px;
+    color: white;
+}
+
+
+.photo_br{
+    width: 380px;
+    height: 280px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    border-radius: 20px;
+    opacity: 0;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+/* 개인프로젝트 영역 */
+.project_area{
+    color: white;
+    padding: 30px 30px 50px 30px;
+    background: no-repeat linear-gradient(#0152c5, #35fff1);
+    width: 100%;
+    position: relative;
+}
+
+.pigma{
+    width: 60px;
+}
+
+.project_cont{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.project_design{
+    width: 45%;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+.project_design h4{
+    margin-bottom: 40px;
+}
+
+.project_design .pro_design_img{
+    width: 100%;
+    position: relative;
+}
+
+.project_design .pro_design_img img{
+    width: 20%;
+    margin: 0 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+    cursor: pointer;
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.pro_design_img h4{
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.pro_design_img a{
+    position: absolute;
+    right: 40px;
+    top: -60px;
+    font-weight: bold;
+    opacity: 0.5;
+    transition: all 0.3s;
+    display: none;
+}
+
+.pro_design_img a:hover{
+    opacity: 1;
+}
+
+.project_mockup{
+    width: 45%;
+    text-align: center;
+}
+
+.project_mockup h4{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project_mockup div img{
+    width: 75%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transform: translateX(20px);
+    transition: all 0.3s 0.3s;
+    opacity: 0;
+}
+
+.sonic{
+    position: absolute;
+    width: 250px;
+    top: 0;
+    right: 90px;
+    transform: rotate(10deg);
+    opacity: 0;
+    transition: all 0.3s 0.4s;
+}
+
+.koopa{
+    position: absolute;
+    width: 250px;
+    top: 330px;
+    right: 38%;
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: all 0.3s 0.5s;
+}
+
+/* 개인프로젝트 more 팝업창 */
+.project_popup{
+    width: 1300px;
+    height: 800px;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px black;
+    display: none;
+}
+
+.project_popup_area{
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+.project_popup_close{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+/* 팀프로젝트 영역 */
+.team_project_area{
+    padding: 30px 30px 50px 30px;
+    /* background: linear-gradient(rgb(76, 0, 78), rgb(250, 96, 229)); */
+    position: relative;
+}
+
+.team_project_area h2{
+    color: white;
+}
+
+.team_contents{
+    width: 1200px;
+    height: 600px;
+    border-radius: 20px;
+    border: 5px solid white;
+    margin: 50px auto 0;
+    background-color: rgb(255, 107, 132);
+    position: relative;
+    box-shadow: 5px 5px 10px black;
+}
+
+.team_project_area>img{
+    width: 200px;
+    position: absolute;
+    left: 250px;
+    bottom: 0;
+}
+
+.team_slide_area{
+    width: 1200px;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team_left{
+    width: 35%;
+    text-align: center;
+    /* border: 1px solid red; */
+    opacity: 0;
+    transition: all 0.3s;
+}
+.team_left h3{
+    margin-bottom: 20px;
+}
+
+.team_slide{
+    /* border: 1px solid red; */
+    position: relative;
+}
+.team_slide>li{
+    box-shadow: 5px 5px 10px black;
+}
+.team_slide li a{}
+.team_slide li a img{
+    width: 100%;
+    
+}
+
+.team_slide .slick-dots{}
+.team_slide .slick-dots li{
+    display: inline-block;
+    margin: 0 5px;
+}
+.team_slide .slick-dots li button{
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    text-indent: -9999px;
+    background-color: rgb(189, 189, 189);
+    box-shadow: 0 3px 5px black;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.team_slide .slick-dots li.slick-active button{
+    background-color: white;
+    box-shadow: 0 0 10px black;
+}
+
+.team_slide .slick-arrow{
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+    background: url(../img/팀에로우.png) no-repeat center center /contain;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 50%;
+}
+.team_slide .slick-arrow.slick-prev{
+    left: -50px;
+    z-index: 10;
+    transform: translateY(-50%) rotate(180deg);
+}
+.team_slide .slick-arrow.slick-next{
+    z-index: 10;
+    right: -50px;
+    transform: translateY(-50%);
+}
+
+.team_right{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* border: 1px solid red; */
+    opacity: 0;
+    transition: all 0.3s 0.3s;
+}
+
+.team_right>img{
+    position: absolute;
+    width: 420px;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.team_right h3{
+    margin-bottom: 30px;
+}
+
+.team_right h4{
+    color: white;
+    text-shadow: 0 0 10px black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 26%;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.card{
+    /* top: 50px; */
+    width: 100%;
+    height: 200px;
+    /* border: 1px solid red; */
+    transform-origin: center bottom;
+    position: relative;
+}
+
+.card img{
+    width: 90px;
+    position: absolute;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.card1{
+    z-index: 15;
+    transform: translate(60px, 20px) rotate(-15deg);
+    transition-delay: 0.6s !important;
+}
+.card2{
+    z-index: 14;
+    transform: translate(130px, 5px) rotate(-5deg);
+    transition-delay: 0.4s !important;
+}
+.card3{
+    z-index: 13;
+    transform: translate(200px, 5px) rotate(5deg);
+    transition-delay: 0.2s !important;
+}
+.card4{
+    z-index: 12;
+    transform: translate(270px, 15px) rotate(15deg);
+}
+
+.deck{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+.deck img{
+    width: 200px;
+    opacity: 1;
+    transition: all 0.3s;
+}
+.deck h3{
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 10px black;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60%;
+    opacity: 0;
+    transition: all 0.3s 0.1s;
+}
+.deck h3 a{}
+
+.team_contents>img{
+    position: absolute;
+    bottom: 20px;
+    width: 50px;
+}
+
+.team_icon1{
+    right: 60px;
+    transform: scale(0);
+    transition: all 0.3s;
+}
+
+.team_icon2{
+    right: 20px;
+    transform: scale(0);
+    transition: all 0.3s 0.3s;
+}
+
+/* 팀 팝업영역 */
+.team_pop{
+    position: fixed;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.team_detail_pop{
+    
+}
+
+.team_close{
+    position: absolute;
+    right: 40px;
+    top: 30px;
+    cursor: pointer;
+}
+
+/* 웹페이지 영역 */
+.web_page_area{
+    padding: 30px;
+    background: linear-gradient(#8974ff, #00013a) no-repeat;
+    color: white;
+}
+
+.web_page_area h2{
+    margin-bottom: 30px;
+}
+
+.web_page_menu{
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.web_page_menu ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.web_page_menu ul li{
+    margin-bottom: 50px;
+    position: relative;
+    /* border: 1px solid red; */
+    cursor: pointer;
+}
+.web_page_menu ul li h4{
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+.web_page_menu ul li a{}
+.web_page_menu ul li a img{
+    width: 350px;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.web_line{
+    width: 40px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+}
+
+.web_page_menu ul li h3{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    /* animation: font_effect 1s infinite alternate; */
+    display: none;
+    opacity: 0.8;
+}
+
+.hover_line{
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    /* animation: line_move1 0.6s ease-out forwards; */
+}
+
+.hover_line1{
+    transform-origin: center right;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-171%) rotate(45deg) scaleX(0);
+    /* animation: hover_line_move1 0.6s 0.5s ease-out forwards; */
+}
+.hover_line2{
+    transform-origin: center left;
+    left: 50%;
+    top: 35%;
+    transform: translateX(71%) rotate(-45deg) scaleX(0);
+    /* animation: hover_line_move2 0.6s 0.5s ease-out forwards; */
+}
+.hover_line3{
+    transform-origin: center right;
+    left: 51%;
+    bottom: 45%;
+    transform: translateX(-179%) rotate(-45deg) scaleX(0);
+    /* animation: hover_line_move3 0.6s 0.5s ease-out forwards; */
+}
+.hover_line4{
+    transform-origin: center left;
+    left: 51%;
+    bottom: 45%;
+    transform: translateX(60%) rotate(45deg) scaleX(0);
+    /* animation: hover_line_move4 0.6s 0.5s ease-out forwards; */
+}
+
+.hover_line_top{
+    width: 160px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center right;
+    /* animation: line_tb_move 0.5s 0.6s linear infinite; */
+}
+
+.hover_line_bottom{
+    width: 160px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    bottom: 35%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center left;
+    /* animation: line_tb_move 0.5s 0.6s linear infinite; */
+}
+
+/* 웹페이지 코딩 팝업창 */
+.coding_pop{
+    width: 1250px;
+    height: 700px;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.coding_pop_close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.daol_block3{
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0 -5px 5px gray;
+}
+
+.daol_block1{
+    position: absolute;
+    right: 0;
+    top: -5px;
+}
+.daol_block2{
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.coding_pop_br{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 90;
+    display: none;
+}
+
+/* 엔딩영역 */
+.ending_area{
+    height: 400px;
+    background: url(../img/메인페이지배경1.jpg) no-repeat center center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding-top: 120px;
+}
+
+.ending_area h3{
+    text-shadow: 0 0 10px black;
+    display: none;
+}
+
+.fin1{
+    margin-bottom: 30px;
+}
+
+.fin2{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.fin3{
+    font-size: 16px;
+}
+
+/* 푸터영역 */
+.footer{
+    height: 250px;
+    background-color: black;
+    color: white;
+    padding-top: 80px;
+}
+
+.footer h3{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+@keyframes line_move1{
+    0%{
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+@keyframes hover_line_move1{
+    0%{
+        transform: translateX(-171%) rotate(45deg) scaleX(0);
+    }
+    100%{
+        transform: translateX(-171%) rotate(45deg) scaleX(1);
+    }
+}
+
+@keyframes hover_line_move2{
+    0%{
+        transform: translateX(71%) rotate(-45deg) scaleX(0);
+    }
+    100%{
+        transform: translateX(71%) rotate(-45deg) scaleX(1);
+    }
+}
+
+@keyframes hover_line_move3{
+    0%{
+        transform: translateX(-179%) rotate(-45deg) scaleX(0);
+    }
+    100%{
+        transform: translateX(-179%) rotate(-45deg) scaleX(1);
+    }
+}
+
+@keyframes hover_line_move4{
+    0%{
+        transform: translateX(60%) rotate(45deg) scaleX(0);
+    }
+    100%{
+        transform: translateX(60%) rotate(45deg) scaleX(1);
+    }
+}
+
+@keyframes line_tb_move{
+    0%{
+        transform: translateX(-50%) scaleX(0);
+    }
+    100%{
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+@keyframes font_effect{
+    0%{
+        opacity: 0.8;
+    }
+    10%{
+        opacity: 0.9;
+    }
+    30%{
+        opacity: 0.8;
+    }
+    40%{
+        opacity: 0.7;
+    }
+    60%{
+        opacity: 0.8;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    90%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 0.9;
+    }
+}

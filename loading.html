@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="4; index.html">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(function(){
+            var i = 0;
+            setInterval(function(){
+                if(i == 100){
+                    i = 100;
+                }else{
+                    i ++;
+                }
+
+                $(".count").text(i + "%");
+            }, 20)
+
+            $(".load_bar").animate({"left":"0"}, 3000)
+        })
+    </script>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(0, 76, 138);
+            color: white;
+        }
+
+        img{
+            position: absolute;
+        }
+
+        .loading_img1{
+            width: 300px;
+            top: 200px;
+            left: 740px;
+            animation: loading_img1 2s infinite linear;
+        }
+
+        .loading_img2{
+            width: 150px;
+            top: 360px;
+            left: 1010px;
+            transform: rotate(30deg);
+            animation: loading_img2 1s infinite linear;
+        }
+        
+        .loading_text{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 70%;
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .loading_c{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            display: inline-block;
+        }
+
+        
+        .count{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .bar{
+            width: 90%;
+            height: 30px;
+            background-color: rgb(175, 175, 175);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 100px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .load_bar{
+            width: 100%;
+            height: 30px;
+            background-color: rgb(0, 132, 255);
+            position: absolute;
+            left: -100%;
+        }
+
+        @keyframes loading_img1{
+            0%{transform: rotate(0);}
+            100%{transform: rotate(360deg);}
+        }
+
+        @keyframes loading_img2{
+            0%{transform: rotate(30deg);}
+            100%{transform: rotate(-330deg);}
+        }
+    </style>
+
+    
+</head>
+<body>
+    <img src="img/톱니바퀴.png" alt="loading1" class="loading_img1">
+    <img src="img/톱니바퀴.png" alt="loading2" class="loading_img2">
+
+    <div class="loading_text">
+        <h1>Loading...</h1>
+
+        <div class="count">
+            
+        </div>
+    </div>
+
+    <div class="bar">
+        <div class="load_bar"></div>
+    </div>
+</body>
+</html>

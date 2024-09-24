@@ -1,0 +1,624 @@
+@charset "utf-8";
+
+.full_wrap{
+    display: none;
+    color: white;
+}
+
+.section1{
+    background: linear-gradient(#0243a7, #000f4a) no-repeat;
+}
+.section2{
+    background: linear-gradient(#000f46 0%, #000f46 60%, #410069 100%) no-repeat;
+}
+
+.picture{
+    width: 250px;
+    height: 350px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 5px gray;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    z-index: 3;
+    transform: scale(0);
+    animation: picture_scale 0.5s 1s ease-out forwards;
+}
+
+.yes_info{
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    display: none;
+}
+
+.yes_info li{
+    margin-bottom: 40px;
+}
+.yes_info li h2{
+    font-size: 20px;
+}
+.yes_info li span{}
+.yes_info li img{
+    width: 60px;
+}
+.yes_info li p{}
+
+.info_more{}
+.info_more div{
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.subm_motion{
+    width: 350px;
+    height: 250px;
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 20px;
+    right: -350px;
+    animation: subm_move 8s infinite ease-in;
+    
+}
+
+.subm{
+    width: 300px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    /* animation: subm_move 3s infinite linear; */
+}
+
+.prop{
+    width: 200px;
+    z-index: 2;
+    position: absolute;
+    bottom: 0px;
+    right: -50px;
+    transform: rotate(0);
+    animation: prop_rot 0.5s infinite linear;
+    /* box-shadow: 0 0 80px rgb(46, 137, 255); */
+}
+
+.bubble{
+    position: absolute;
+    box-shadow: inset 0 -5px 10px rgba(118, 177, 255, 0.6);
+    border: 1px solid rgb(91, 162, 255);
+}
+
+.bubble1{
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    animation: bubble_motion1 5s infinite alternate linear, bubble_move1 ease-out 7s 1.2s forwards infinite;
+    right: 100px;
+    bottom: 200px;
+}
+
+.bubble2{
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    animation: bubble_motion1 5s infinite alternate linear, bubble_move2 ease-out 6s 1.5s forwards infinite;
+    right: 220px;
+    bottom: 220px;
+}
+
+.bubble3{
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+    animation: bubble_motion1 5s infinite alternate linear, bubble_move3 ease-out 2.7s 1.4s forwards infinite;
+    right: 130px;
+    bottom: 250px;
+}
+
+.bubble4{
+    width: 60px;
+    height: 60px;
+    animation: bubble_motion2 5s infinite alternate linear, bubble_move4 6s infinite ease-out;
+    top: 300px;
+    right: 300px;
+}
+
+.bubble5{
+    width: 50px;
+    height: 50px;
+    animation: bubble_motion2 5s infinite alternate linear, bubble_move5 8s infinite ease-out;
+    top: 200px;
+    right: 180px;
+}
+
+.bubble6{
+    width: 50px;
+    height: 50px;
+    animation: bubble_motion1 5s infinite alternate linear, bubble_move6 7s infinite ease-out;
+    bottom: 240px;
+    left: 180px;
+}
+
+.bubble7{
+    width: 70px;
+    height: 70px;
+    animation: bubble_motion2 5s infinite alternate linear, bubble_move7 10s infinite ease-out;
+    top: 600px;
+    left: 80px;
+}
+
+.bubble8{
+    width: 120px;
+    height: 120px;
+    animation: bubble_motion2 5s infinite alternate linear, bubble_move8 12s infinite ease-out;
+    top: 650px;
+    left: 280px;
+}
+
+.bubble9{
+    width: 90px;
+    height: 90px;
+    animation: bubble_motion2 5s infinite alternate linear, bubble_move9 9s infinite ease-out;
+    top: 300px;
+    right: 600px;
+}
+
+.bubble10{
+    width: 60px;
+    height: 60px;
+    animation: bubble_motion1 5s infinite alternate linear, bubble_move10 8s infinite ease-out;
+    top: 400px;
+    right: 720px;
+}
+
+/* 페이지2 */
+
+.section2{}
+
+.section2 h4{
+    position: absolute;
+}
+
+.img_bubble1{}
+
+.img_bubble1 h4{
+    top: 520px;
+    left: 320px;
+}
+
+.img_bubble2 h4{
+    top: 420px;
+    left: 870px;
+}
+
+.img_bubble3 h4{
+    bottom: 160px;
+    left: 640px;
+}
+
+.b_img{
+    position: absolute;
+    box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.4);
+    border: 1px solid white;
+    width: 300px;
+    height: 300px;
+}
+
+.img_bubble1 .b_img{
+    background: url(img/이미지\ 팝아트\ 우주.jpg) no-repeat center center /cover;
+    top: 200px;
+    left: 200px;
+    animation: bubble_motion1 16s infinite;
+}
+
+
+.img_bubble2{}
+.img_bubble2 .b_img{
+    background: url(img/6시.jpg) no-repeat center center /cover;
+    animation: bubble_motion2 18s infinite;
+    bottom: 200px;
+    left: 500px;
+}
+
+.img_bubble3{}
+.img_bubble3 .b_img{
+    background: url(img/이미지\ 텍스트\ 마스크.jpg) no-repeat center right /cover;
+    animation: bubble_motion1 17s infinite;
+    top: 100px;
+    left: 750px;
+}
+
+.section2 img{
+    position: absolute;
+}
+
+.sec2_img1{
+    width: 400px;
+    bottom: -70px;
+    left: -50px;
+    animation: sec2_move infinite alternate 11s;
+}
+.sec2_img2{
+    width: 300px;
+    bottom: -60px;
+    left: 80px;
+    animation: sec2_move infinite alternate 12s 0.5s;
+}
+.sec2_img3{
+    width: 400px;
+    transform: rotateY(180deg);
+    right: -50px;
+    bottom: -70px;
+    animation: sec2_move infinite alternate 11s 0.3s;
+}
+.sec2_img4{
+    width: 300px;
+    bottom: -60px;
+    right: 80px;
+    transform: rotateY(180deg);
+    animation: sec2_move infinite alternate 12s 0.2s;
+}
+
+.bubble_s2{
+    position: absolute;
+    box-shadow: inset 0 -5px 10px rgba(177, 109, 255, 0.6);
+    border: 1px solid rgb(233, 195, 255);
+}
+
+.bubble11{
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    left: 50px;
+    opacity: 1;
+    animation: bubble_motion1 5s infinite alternate, bubble_move11 4s infinite ease-out;
+}
+
+.bubble12{
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    left: 130px;
+    opacity: 1;
+    animation: bubble_motion1 5s infinite alternate, bubble_move12 5s 0.5s infinite ease-out;
+}
+
+.bubble13{
+    width: 40px;
+    height: 40px;
+    bottom: 120px;
+    left: 200px;
+    opacity: 1;
+    animation: bubble_motion2 5s infinite alternate, bubble_move13 5s 0.2s infinite ease-out;
+}
+
+.bubble14{
+    width: 50px;
+    height: 50px;
+    bottom: 70px;
+    left: 240px;
+    opacity: 1;
+    animation: bubble_motion2 5s infinite alternate, bubble_move14 5s 0.4s infinite ease-out;
+}
+
+.bubble15{
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 50px;
+    opacity: 1;
+    animation: bubble_motion1 5s infinite alternate, bubble_move11 4s 0.2s infinite ease-out;
+}
+
+.bubble16{
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    right: 130px;
+    opacity: 1;
+    animation: bubble_motion1 5s infinite alternate, bubble_move12 5s 0.3s infinite ease-out;
+}
+
+.bubble17{
+    width: 40px;
+    height: 40px;
+    bottom: 120px;
+    right: 200px;
+    opacity: 1;
+    animation: bubble_motion2 5s infinite alternate, bubble_move13 5s 0.6s infinite ease-out;
+}
+
+.bubble18{
+    width: 50px;
+    height: 50px;
+    bottom: 70px;
+    right: 240px;
+    opacity: 1;
+    animation: bubble_motion2 5s infinite alternate, bubble_move14 5s 0.5s infinite ease-out;
+}
+
+.go_home{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    /* border: 1px solid red; */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60%;
+    cursor: pointer;
+}
+
+.go_home:hover img{
+    opacity: 1;
+}
+
+.go_home:hover h2{
+    opacity: 1;
+}
+
+.go_home img{
+    width: 26px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.go_home h2{
+    line-height: 48px;
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.go_home h2::before{
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background-color: white;
+    margin-right: 10px;
+}
+
+@keyframes bubble_move1{
+    0%{
+        bottom: 200px;
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 600px;
+        opacity: 0;
+    }
+}
+
+@keyframes bubble_move2{
+    0%{
+        bottom: 220px;
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 500px;
+        opacity: 0;
+    }
+}
+
+@keyframes bubble_move3{
+    0%{
+        bottom: 250px;
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 350px;
+        opacity: 0;
+    }
+}
+
+@keyframes bubble_move4{
+    0%{
+        top: 300px;
+    }
+    100%{
+        top: -60px;
+    }
+}
+
+@keyframes bubble_move5{
+    0%{
+        top: 200px;
+    }
+    100%{
+        top: -50px;
+    }
+}
+
+@keyframes bubble_move6{
+    0%{
+        bottom: 240px;
+        opacity: 1;
+    }
+
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        bottom: 450px;
+        opacity: 0;
+    }
+}
+
+@keyframes bubble_move7{
+    0%{
+        top: 600px;
+    }
+    100%{
+        top: -70px;
+    }
+}
+
+@keyframes bubble_move8{
+    0%{
+        top: 650px;
+    }
+    100%{
+        top: -120px;
+    }
+}
+
+@keyframes bubble_move9{
+    0%{
+        top: 300px;
+    }
+    100%{
+        top: -90px;
+    }
+}
+
+@keyframes bubble_move10{
+    0%{
+        top: 400px;
+    }
+    100%{
+        top: -60px;
+    }
+}
+
+@keyframes bubble_move11{
+    0%{
+        bottom: 30px;
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 260px;
+        opacity: 0;
+    }
+}
+
+@keyframes bubble_move12{
+    0%{
+        bottom: 10px;
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 300px;
+        opacity: 0;
+    }
+}
+
+@keyframes bubble_move13{
+    0%{
+        bottom: 120px;
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 240px;
+        opacity: 0;
+    }
+}
+
+@keyframes bubble_move14{
+    0%{
+        bottom: 70px;
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 260px;
+        opacity: 0;
+    }
+}
+
+@keyframes bubble_motion1{
+    0%{border-radius: 50% 45% 54% 49% / 51% 51% 48% 52%;}
+    10%{border-radius: 40% 49% 52% 60% / 48% 57% 51% 55%;}
+    20%{border-radius: 48% 42% 55% 58% / 56% 44% 45% 40%;}
+    30%{border-radius: 47% 52% 59% 51% / 43% 46% 48% 58%;}
+    40%{border-radius: 50% 42% 56% 49% / 54% 45% 44% 55%;}
+    50%{border-radius: 50% 57% 52% 42% / 43% 49% 55% 50%;}
+    60%{border-radius: 57% 53% 56% 41% / 44% 55% 57% 51%;}
+    70%{border-radius: 52% 47% 44% 53% / 55% 51% 41% 44%;}
+    80%{border-radius: 48% 50% 45% 55% / 59% 60% 56% 50%;}
+    90%{border-radius: 55% 47% 51% 48% / 41% 42% 53% 48%;}
+    100%{border-radius: 50% 45% 54% 49% / 51% 51% 48% 52%;}
+}
+
+@keyframes bubble_motion2{
+    0%{border-radius: 50% 60% 54% 59% / 51% 46% 48% 56%;}
+    10%{border-radius: 40% 49% 52% 60% / 48% 57% 51% 55%;}
+    20%{border-radius: 48% 42% 56% 58% / 56% 60% 45% 41%;}
+    30%{border-radius: 47% 60% 59% 51% / 43% 46% 48% 58%;}
+    40%{border-radius: 50% 42% 56% 49% / 54% 45% 44% 55%;}
+    50%{border-radius: 50% 57% 57% 42% / 43% 58% 55% 50%;}
+    60%{border-radius: 57% 53% 56% 41% / 44% 55% 57% 51%;}
+    70%{border-radius: 52% 55% 44% 53% / 55% 51% 41% 57%;}
+    80%{border-radius: 48% 50% 45% 55% / 59% 60% 56% 50%;}
+    90%{border-radius: 55% 60% 51% 48% / 45% 42% 53% 48%;}
+    100%{border-radius: 50% 60% 54% 59% / 51% 46% 48% 56%;}
+}
+
+@keyframes subm_move{
+    0%{
+        right: -350px;
+    }
+    50%{
+        right: 1920px;
+    }
+    100%{
+        right: 1920px;
+    }
+}
+
+@keyframes prop_rot{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes picture_scale{
+    0%{
+        transform: scale(0);
+    }
+    90%{
+        transform: scale(1.1);
+    }
+    100%{transform: scale(1);}
+}
+
+@keyframes sec2_move{
+    0%{transform: translateX(0);}
+    10%{transform: translateX(1px);}
+    20%{transform: translateX(-1px);}
+    30%{transform: translateX(0);}
+    40%{transform: translateX(-1px);}
+    50%{transform: translateX(0);}
+    60%{transform: translateX(2px);}
+    70%{transform: translateX(-1px);}
+    80%{transform: translateX(1px);}
+    90%{transform: translateX(-2px);}
+    100%{transform: translateX(0);}
+}

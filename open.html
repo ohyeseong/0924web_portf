@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/open.js"></script>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body{
+            height: 100%;
+            background-color: #00325c;
+            color: white;
+        }
+
+        .open_port{
+            width: 800px;
+            height: 200px;
+            /* border: 1px solid red; */
+            margin: 0 auto;
+            position: relative;
+            margin-top: 30px
+        }
+
+        .open_port h1{
+            font-size: 90px;
+            letter-spacing: 5px;
+            text-align: center;
+            line-height: 198px;
+            transition: all 0.3s;
+        }
+        .open_port div{
+            background-color: white;
+            position: absolute; 
+            transition: all 0.5s;
+            opacity: 0; 
+        }
+
+        div.port_line1{width: 560px; top: 50px; left: 0; height: 0.1px;} /* left가 다시 100 */
+        div.port_line2{width: 0.1px; bottom: 0; height: 80px; left: 100px;} /* bottom이 다시 40 */
+        div.port_line3{width: 560px; bottom: 40px; right: 60px; height: 0.1px;} /* right가 다시 100 */
+        div.port_line4{width: 0.1px; top: 10px; height: 80px; right: 100px;} /* top이 다시 50px로 */
+
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .open_door{
+            width: 650px;
+            height: 450px;
+            /* border: 1px solid red; */
+            margin: 0 auto;
+            background-color: white;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.3s;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transform: rotateX(0) scale(1);
+            perspective: 2000px;
+            /* animation: door_scale 0.3s 4s ease-out forwards; */
+        }
+
+        .open_door:hover{
+            box-shadow: 0 0 20px white;
+        }
+
+        .door_left{
+            border: 1px solid white;
+            width: 323px;
+            height: 448px;
+            background-color: #004fa8;
+            position: relative;
+            transform-origin: left center;
+            transform-style: preserve-3d;
+            perspective: 2000px;
+            transform: rotateY(0) rotateY(0);
+            /* animation: left_rot 1s 1s ease-out forwards; */
+        }
+        .door_right{
+            border: 1px solid white;
+            width: 323px;
+            height: 448px;
+            background-color: #004fa8;
+            position: relative;
+            transform-origin: right center;
+            transform-style: preserve-3d;
+            perspective: 2000px;
+            transform: rotateY(0);
+            /* animation: right_rot 1s 1s ease-out forwards; */
+        }
+
+        .door_left .door_circle{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+        }
+        .door_right .door_circle{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+        }
+
+        .door_click{
+            text-align: center;
+            opacity: 1;
+            transition: all 0.5s;
+        }
+
+        .door_click img{
+            width: 30px;
+            margin-bottom: 30px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) rotate(-90deg);
+            bottom: 60px;
+            opacity: 0;
+            /* animation: arrow_move 1s infinite linear; */
+            /* transition: all 0.5s; */
+        }
+
+        .door_click h4{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            bottom: 50px;
+            opacity: 0;
+            transition: all 0.5s;
+            /* animation: font_opacity 1s infinite linear; */
+        }
+
+        @keyframes font_opacity{
+            0%{opacity: 1;}
+            50%{opacity: 0.5;}
+            100%{opacity: 1;};
+        }
+
+        @keyframes arrow_move{
+            0%{
+                opacity: 1;
+                bottom: 60px;
+            }
+            50%{
+                opacity: 1;
+                bottom: 70px;
+            }
+            100%{
+                opacity: 1;
+                bottom: 60px;
+            }
+        }
+
+        @keyframes left_rot{
+            0%{transform: rotateY(0);}
+            100%{transform: rotateY(-160deg);}
+        }
+        @keyframes right_rot{
+            0%{transform: rotateY(0);}
+            100%{transform: rotateY(160deg);}
+        }
+
+        @keyframes door_scale{
+            0%{
+                transform: scale(1);
+            }
+
+            100%{
+                transform: scale(3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="open_port">
+        <h1>PORTFOLIO</h1>
+        <div class="port_line1"></div>
+        <div class="port_line2"></div>
+        <div class="port_line3"></div>
+        <div class="port_line4"></div>
+    </div>
+
+    <h2>WEB DESIGN</h2>
+
+    <div class="open_door">
+        <div class="door_left">
+            <div class="door_circle"></div>
+        </div>
+        <div class="door_right">
+            <div class="door_circle"></div>
+        </div>
+    </div>
+
+    <div class="door_click">
+        <img src="img/에로우하양버튼.png" alt="arrow">
+        <h4>문을 클릭해보세요!</h4>
+    </div>
+</body>
+</html>
